@@ -8,6 +8,14 @@ const reducer = (state = initialState, action) => {
     const { type } = action;
 
     // Add a Name Tag
-
-    return state;
+    switch(type) {
+        case 'addName':
+            return [
+                ...state,
+                action.payload.name
+                
+            ]
+        default: 
+        return state;
+        }
 }

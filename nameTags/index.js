@@ -7,3 +7,12 @@ dispatch({ type: null }); // Here we're making a call to dispatch() - this trigg
 
 // Write DOM event listeners here, make them dispatch actions to the Redux store 
 
+var input = document.getElementById("nameForm");
+input.addEventListener("keydown", function (e) {
+    e.preventDefault();
+    if (e.key === 'Enter') {  //checks whether the pressed key 
+        var name = e.target.value;
+        dispatch({type: 'addName', payload: {name: name}})
+    }
+});
+
